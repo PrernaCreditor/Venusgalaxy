@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-const VITE_WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
+const VITE_acess_key = import.meta.env.VITE_acess_key
 
 const Contact = () => {
   const contactInfo = [
@@ -37,7 +37,7 @@ const Contact = () => {
     setResult("");
 
     const formData = new FormData(event.target);
-    formData.append("access_key", VITE_WEB3FORMS_ACCESS_KEY);
+    formData.append("access_key", VITE_acess_key);
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -62,7 +62,7 @@ const Contact = () => {
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
           {[...Array(30)].map((_, i) => (
-            <div 
+            <div
               key={i}
               className="absolute rounded-full bg-gradient-to-r from-cyan-400/20 to-purple-400/20 animate-pulse"
               style={{
@@ -76,10 +76,10 @@ const Contact = () => {
               }}
             ></div>
           ))}
-          
+
           {/* Floating geometric shapes */}
           {[...Array(8)].map((_, i) => (
-            <div 
+            <div
               key={`shape-${i}`}
               className="absolute rounded-lg bg-cyan-500/5 animate-bounce"
               style={{
@@ -94,10 +94,10 @@ const Contact = () => {
             ></div>
           ))}
         </div>
-        
+
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-purple-500/10"></div>
-        
+
         <div className="container-custom relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-[family-name:Playfair_Display] font-bold mb-6 text-white mb-8">
@@ -109,21 +109,19 @@ const Contact = () => {
             <div className="flex justify-center space-x-4 mb-12">
               <button
                 onClick={() => setActiveTab('contact')}
-                className={`px-8 py-4 rounded-xl transition-all duration-500 ${
-                  activeTab === 'contact'
-                    ? 'bg-gradient-to-r from-cyan-600 to-purple-600 text-white shadow-lg shadow-cyan-500/30 transform scale-105'
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20 border border-white/20'
-                }`}
+                className={`px-8 py-4 rounded-xl transition-all duration-500 ${activeTab === 'contact'
+                  ? 'bg-gradient-to-r from-cyan-600 to-purple-600 text-white shadow-lg shadow-cyan-500/30 transform scale-105'
+                  : 'bg-white/10 text-gray-300 hover:bg-white/20 border border-white/20'
+                  }`}
               >
                 <span className="text-lg font-medium">Contact Form</span>
               </button>
               <button
                 onClick={() => setActiveTab('schedule')}
-                className={`px-8 py-4 rounded-xl transition-all duration-500 ${
-                  activeTab === 'schedule'
-                    ? 'bg-gradient-to-r from-cyan-600 to-purple-600 text-white shadow-lg shadow-cyan-500/30 transform scale-105'
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20 border border-white/20'
-                }`}
+                className={`px-8 py-4 rounded-xl transition-all duration-500 ${activeTab === 'schedule'
+                  ? 'bg-gradient-to-r from-cyan-600 to-purple-600 text-white shadow-lg shadow-cyan-500/30 transform scale-105'
+                  : 'bg-white/10 text-gray-300 hover:bg-white/20 border border-white/20'
+                  }`}
               >
                 <span className="text-lg font-medium">Schedule Call</span>
               </button>
@@ -140,7 +138,7 @@ const Contact = () => {
             <h2 className="text-3xl font-bold text-white mb-8">
               Contact Information
             </h2>
-            
+
             {contactInfo.map((item, index) => (
               <div key={index} className="flex items-start space-x-6 p-5 rounded-1xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 hover:border-cyan-400/30 transition-all duration-500 transform hover:scale-[1.02] hover:shadow-xl hover:shadow-cyan-500/10">
 
@@ -164,7 +162,7 @@ const Contact = () => {
                 </div>
               </div>
             ))}
-            
+
             {/* Social Links */}
             <div className="pt-8">
               <h3 className="text-xl font-semibold text-white mb-4">Connect With Us</h3>
@@ -181,6 +179,12 @@ const Contact = () => {
                     <path fillRule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" clipRule="evenodd" />
                   </svg>
                 </a>
+                <a href="https://www.linkedin.com/in/alonzo-hayes-0a96933a0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-gradient-to-r from-cyan-600 to-purple-600 flex items-center justify-center text-white hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/20">
+                  <span className="sr-only">LinkedIn</span>
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                  </svg>
+                </a>
               </div>
             </div>
 
@@ -193,12 +197,12 @@ const Contact = () => {
                 {activeTab === 'contact' ? 'Send a Message' : 'Schedule a Call'}
               </h2>
               <p className="text-gray-400">
-                {activeTab === 'contact' 
-                  ? 'Fill out the form and our team will get back to you within 24 hours.' 
+                {activeTab === 'contact'
+                  ? 'Fill out the form and our team will get back to you within 24 hours.'
                   : 'Choose a time that works for you and we will call you for a consultation.'}
               </p>
             </div>
-            
+
             {activeTab === 'contact' ? (
               <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl shadow-cyan-500/10">
                 <form
